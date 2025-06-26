@@ -1,18 +1,22 @@
-# Use official Python 3.9 slim image
-FROM python:3.9-slim
+FROM python:3.8-slim
 
-# Set working directory inside the container
 WORKDIR /app
 
-# Copy all project files into the container
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    gcc \
+    libffi-dev \
+    libssl-dev \
+    libsasl2-dev \
+    python3-dev \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY . /app
 
-# Upgrade pip and install dependencies
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# Expose Rasa default port (5005)
 EXPOSE 5005
 
-# Run Rasa server when container starts
 CMD ["rasa", "run", "--enable-api", "--cors", "*"]

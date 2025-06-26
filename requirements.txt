@@ -1,5 +1,2 @@
-rasa==3.6.21
-rasa-sdk==3.6.2
-requests
-python-dotenv
-SQLAlchemy<2.0
+rasa==3.5.10
+rasa-sdk==3.5.0
