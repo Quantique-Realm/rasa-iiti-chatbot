@@ -3,11 +3,15 @@
 
 This repository contains the **Rasa backend** for the IIT Indore Campus Chatbot. It handles all chatbot logic, NLU/NLP, dialogue management, and custom actions.
 
-## 🚀 Features
-- Built with **Rasa Open Source (v3.x)**
-- REST API enabled for frontend integration
-- Includes **custom actions server**
-- Easily deployable on local or cloud servers
+## Features
+
+-  Built with **Rasa Open Source (v3.x)**
+-  **BERT-based NLU** for better understanding of wrong/misspelled words (using `DIETClassifier` + `sentence-transformers`)
+-  **REST API enabled** for smooth frontend integration
+-  **Custom actions server** (runs on port `5055`)
+-  **OpenStreetMap (OSM) API Integration** for campus map queries
+-  Supports deployment on **local machines** or **cloud servers (Render/Railway/AWS/GCP)**
+-  Extensible: Add more intents, responses, or API calls anytim
 
 ## 🛠️ Requirements
 - Python 3.9.x (Recommended)
