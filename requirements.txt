@@ -3,3 +3,4 @@ rasa-sdk==3.6.2
 requests
 python-dotenv
 SQLAlchemy<2.0
+sentence-transformers>=2.2.0,<3.0.0
