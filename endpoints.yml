@@ -14,8 +14,7 @@
 #  url: "http://localhost:5055/webhook"
 
 # Tracker store - Use in-memory for Render deployment
-tracker_store:
-  type: InMemoryTrackerStore
+
 
 # PRODUCTION PostgreSQL Configuration (if you add a database later)
 # Uncomment and configure when you add a PostgreSQL service in Render
@@ -26,7 +25,7 @@ tracker_store:
 #  # No need to specify individual connection details when using DATABASE_URL
 
 # LOCAL DEVELOPMENT Configuration (commented out for deployment)
-#tracker_store:
+tracker_store:
   type: SQL
   dialect: "postgresql"
   url: "localhost"
