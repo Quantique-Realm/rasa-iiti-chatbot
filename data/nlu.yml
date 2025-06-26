@@ -1,0 +1,664 @@
+version: "3.1"
+
+nlu:
+- intent: admission_process
+  examples: |
+    - How can I get admission for B.Tech at IIT Indore?
+    - What is the admission procedure for B.Tech at IIT Indore?
+    - How do I apply for IIT Indore B.Tech?
+    - What is the entrance exam for IIT Indore B.Tech?
+    - Is JEE Advanced required for IIT Indore?
+
+- intent: departments_offered
+  examples: |
+    - What B.Tech courses are offered at IIT Indore?
+    - Which branches are available at IIT Indore?
+    - Can you list the B.Tech programs at IIT Indore?
+    - What are the engineering streams at IIT Indore?
+    - Does IIT Indore offer Computer Science?
+
+- intent: registration_procedure
+  examples: |
+    - What are the registration steps for IIT Indore B.Tech?
+    - What documents are required for registration?
+    - How do I complete my registration?
+    - Where do I register for IIT Indore admission?
+    - What is the deadline for registration?
+
+- intent: contact_info
+  examples: |
+    - Whom should I contact for B.Tech admission queries?
+    - What is the email for UG admission office?
+    - Provide the contact details for IIT Indore admissions.
+    - Who is the admission officer at IIT Indore?
+    - Can I call the admission office?
+
+- intent: course_structure
+  examples: |
+    - Where can I find the B.Tech course structure?
+    - How can I check the syllabus of IIT Indore B.Tech courses?
+    - Provide the link to the curriculum details.
+    - What subjects are included in the IIT Indore B.Tech program?
+    - Where can I download the syllabus?
+
+- intent: change_branch
+  examples: |
+    - Can I change my B.Tech branch at IIT Indore?
+    - Is branch change possible at IIT Indore?
+    - What are the rules for branch change?
+    - How does the branch change process work?
+    - When can I apply for branch change?
+
+- intent: scholarships
+  examples: |
+    - Are there any scholarships for IIT Indore students?
+    - What financial aid is available for B.Tech students?
+    - Do SC/ST students get tuition fee exemption?
+    - What are the eligibility criteria for scholarships?
+    - Does IIT Indore offer merit-based scholarships?
+
+- intent: grading_system
+  examples: |
+    - What is the grading system at IIT Indore?
+    - How are grades calculated in IIT Indore?
+    - Can you explain the grading structure?
+    - What is the passing grade at IIT Indore?
+    - How does CGPA calculation work?
+
+- intent: hostel_facilities
+  examples: |
+    - What are the hostel facilities at IIT Indore?
+    - How are the hostels at IIT Indore?
+    - Are there separate hostels for boys and girls?
+    - What amenities are available in IIT Indore hostels?
+    - Are hostels compulsory for students?
+
+- intent: location
+  examples: |
+    - How far is IIT Indore from Indore city?
+    - What is the distance from Indore Railway Station?
+    - How can I reach IIT Indore?
+    - What transport options are available to IIT Indore?
+    - Where exactly is IIT Indore located?
+
+- intent: greet
+  examples: |
+    - Hello!
+    - Hi there!
+    - Hey!
+    - Good morning!
+    - Good evening!
+    - What's up?
+    - Greetings!
+
+- intent: goodbye
+  examples: |
+    - Bye!
+    - Goodbye!
+    - See you later!
+    - Have a nice day!
+    - Take care!
+
+- intent: navigate_campus
+  examples: |
+    - Where is [library](place_name)?
+    - Tell me about [hostel](place_name).
+    - Locate [academic block](place_name).
+    - Where is [sports complex](place_name)?
+    - Show me [canteen](place_name).
+    - Locate [administration block](place_name).
+    - What is [guest house](place_name)?
+    - Can you tell me about the [medical center](place_name)?
+    - Navigate me to [main gate](place_name).
+
+- intent: eligibility_check
+  examples: |
+    - Who can apply for JAM 2025?
+    - Am I eligible for JAM 2025?
+    - Can final-year students apply for JAM?
+    - What is the eligibility criteria for JAM?
+
+- intent: category_certificate
+  examples: |
+    - I do not have a valid OBC-NCL certificate. Can I still apply?
+    - How do I apply under OBC-NCL category if my certificate is invalid?
+    - My EWS certificate is not valid. Can I apply under EWS?
+    - What happens if I don’t upload an updated OBC-NCL certificate?
+    - Can I apply with an existing OBC-NCL certificate?
+
+- intent: foreign_national_eligibility
+  examples: |
+    - I am a foreign national. Can I apply for JAM 2025?
+    - Are international students eligible for JAM?
+    - Can students from outside India take the JAM exam?
+
+- intent: minimum_percentage_requirement
+  examples: |
+    - Do I need a minimum percentage to be eligible for JAM?
+    - What is the minimum marks requirement for JAM?
+    - Is there any academic score requirement for appearing in JAM?
+
+- intent: backlog_eligibility
+  examples: |
+    - I have a backlog. Am I still eligible for JAM?
+    - Can I apply for JAM if I have pending arrears?
+    - Does having a backlog affect my JAM application?
+
+- intent: age_limit
+  examples: |
+    - Is there an age limit for JAM?
+    - What is the maximum age to appear for JAM?
+    - Can older candidates apply for JAM?
+
+- intent: exam_attempts
+  examples: |
+    - How many times can I appear for JAM?
+    - Is there a limit on the number of JAM attempts?
+    - Can I attempt JAM multiple times?
+
+- intent: application_correction
+  examples: |
+    - I made a mistake in my application form. How do I correct it?
+    - Can I change my category after submitting my JAM application?
+    - How do I update my name or date of birth in my application?
+    - Is there a correction window for JAM applications?
+
+- intent: application_fees
+  examples: |
+    - Do I need to pay a fee to fix defects in my application?
+    - How much is the JAM application fee?
+    - Where can I check the application fees for JAM?
+    - What is the mode of payment for JAM application?
+
+- intent: mobile_number_requirement
+  examples: |
+    - Is filling an Indian mobile number mandatory for JAM?
+    - Can I submit the form without verifying my mobile number?
+    - What if I don’t have an Indian mobile number for JAM?
+
+- intent: accepted_identity_documents
+  examples: |
+    - Which identity documents are accepted for JAM application?
+    - Can I use my passport as an ID for JAM?
+    - What ID proof is required to apply for JAM?
+
+- intent: payment_issue
+  examples: |
+    - I paid the application fee, but the portal shows unpaid. What should I do?
+    - My payment for JAM application failed. What now?
+    - How do I check if my JAM payment is successful?
+
+- intent: exam_centre_choice
+  examples: |
+    - Why should I choose three exam cities?
+    - How are JAM exam centers allotted?
+    - Can I change my exam city preference after submission?
+
+- intent: multiple_papers
+  examples: |
+    - Can I appear for two JAM papers?
+    - Do I need to fill two forms for two papers?
+    - How do I apply for an additional JAM paper?
+
+- intent: required_documents
+  examples: |
+    - What documents do I need to upload for JAM?
+    - Do I need to upload my 10th mark sheet for JAM?
+    - What certificates should I upload for category verification?
+
+- intent: photo_signature_issue
+  examples: |
+    - My photo does not meet JAM specifications. Will my application be rejected?
+    - What happens if my signature is not as per JAM guidelines?
+    - How can I fix a defective photograph in my JAM application?
+
+- intent: disability_assistance
+  examples: |
+    - Who qualifies as a "Person with Benchmark Disability"?
+    - Can I avail scribe assistance for JAM if I have writing difficulties?
+    - What is the process to request compensatory time in JAM?
+
+- intent: application_status
+  examples: |
+    - How can I check my JAM application status?
+    - What does "under scrutiny" mean for my JAM application?
+    - Will I be notified if my application has issues?
+
+- intent: admit_card
+  examples: |
+    - When will I receive my JAM Admit Card?
+    - How do I download my JAM Admit Card?
+    - Will my Admit Card be sent via email?
+
+- intent: exam_entry_requirements
+  examples: |
+    - Is the Admit Card alone enough to enter the JAM exam center?
+    - What documents do I need to bring to the exam hall?
+    - Can I bring a soft copy of my Admit Card to the exam?
+
+- intent: late_entry_policy
+  examples: |
+    - If I enter the exam late, will I get extra time?
+    - What happens if I reach the JAM exam center late?
+
+- intent: application_withdrawal
+  examples: |
+    - Can I withdraw my JAM application?
+    - Will I get a refund if I cancel my application?
+    - Is the JAM application fee refundable?
+
+- intent: ask_library_access
+  examples: |
+    - Can students freely access books in the library?
+    - Is the library open access for students?
+    - Can I take books from the library stacks?
+    - Am I allowed to browse books in the Reading Room?
+
+- intent: ask_library_behavior
+  examples: |
+    - What behavior is expected in the library?
+    - What are the library rules regarding silence?
+    - Can I talk in the library?
+    - Is it okay to use my mobile phone inside the library?
+
+- intent: ask_marking_books
+  examples: |
+    - Can I underline or mark library books?
+    - Is it allowed to fold book pages in the library?
+    - Can I highlight text in a library book?
+    - What happens if I damage a library book?
+
+- intent: ask_eating_smoking
+  examples: |
+    - Is eating allowed inside the library?
+    - Can I smoke in the library?
+    - Am I allowed to bring food inside the library?
+    - Can I drink beverages in the library?
+
+- intent: ask_personal_belongings
+  examples: |
+    - Can I carry my bag inside the library?
+    - What personal items are allowed in the library?
+    - Can I bring my own books into the library?
+    - Where should I keep my belongings while using the library?
+
+- intent: ask_borrowing_limits
+  examples: |
+    - How many books can I borrow from the library?
+    - What are the book borrowing limits for students?
+    - How long can I keep borrowed books?
+    - How many days can faculty borrow books?
+
+- intent: ask_late_return
+  examples: |
+    - What happens if I don't return a book on time?
+    - Is there a fine for overdue books?
+    - What are the consequences of late book returns?
+    - Will I be restricted from borrowing if I return books late?
+
+- intent: ask_online_renewal
+  examples: |
+    - Can I renew books online?
+    - How do I renew my library book online?
+    - Can I extend my book borrowing period online?
+    - Is late renewal allowed online?
+
+- intent: ask_second_renewal
+  examples: |
+    - How can I renew books for the second time?
+    - Can I renew my book twice?
+    - Do I need to visit the library for a second renewal?
+    - What is the process for book re-issuance?
+
+- intent: ask_late_fee
+  examples: |
+    - What is the late fee for overdue books?
+    - How much is the fine for late book returns?
+    - What is the penalty for not returning books on time?
+    - Do I have to pay a fine if I return books late?
+
+- intent: ask_lost_book
+  examples: |
+    - What if I lose a library book?
+    - How do I replace a lost book?
+    - Do I need to pay a fee if I lose a book?
+
+- intent: ask_photocopy_replacement
+  examples: |
+    - Can a photocopy replace a lost book?
+    - Can I submit a softcover version instead of a lost hardcover book?
+    - Is a duplicate printout of the book acceptable for replacement?
+    - Will the library accept a photocopied book as a replacement?
+
+- intent: ask_multi_volume_loss
+  examples: |
+    - What if I lose one volume of a multi-volume set?
+    - Do I have to pay for the entire set if I lose one volume?
+    - What happens if I misplace a single book from a set?
+    - How is the cost calculated for a lost volume from a book set?
+
+- intent: ask_out_of_print_book
+  examples: |
+    - What if the lost book is out of print?
+    - How do I pay for an out-of-print book?
+    - What is the replacement cost for an unavailable book?
+    - What if I can't find the lost book anywhere for replacement?
+
+- intent: ask_dining_mandatory
+  examples: |
+    - Is it mandatory to dine in the central dining facility?
+    - Do I have to eat at the dining hall?
+    - Can I opt out of the central dining facility?
+
+- intent: ask_cooking_allowed
+  examples: |
+    - Can I cook inside the hostel?
+    - Is cooking allowed in the hostel?
+    - Am I allowed to prepare my own food?
+
+- intent: ask_meal_timings
+  examples: |
+    - What are the meal timings?
+    - Can I get food anytime?
+    - When is food served in the dining facility?
+
+- intent: ask_sick_meal
+  examples: |
+    - What happens if I fall sick?
+    - Can I get a special diet if I'm unwell?
+    - How can I get a sick meal?
+
+- intent: ask_food_outside
+  examples: |
+    - Can I take food or utensils outside the dining hall?
+    - Am I allowed to carry food outside?
+    - Can I take plates or cutlery outside?
+
+- intent: ask_kitchen_entry
+  examples: |
+    - Can I enter the kitchen area?
+    - Am I allowed inside the dining facility kitchen?
+    - Who can go inside the kitchen?
+
+- intent: ask_meal_sharing
+  examples: |
+    - Can meals be shared among students?
+    - Can I share my meal with a friend?
+    - Is meal sharing allowed?
+
+- intent: ask_complaint_process
+  examples: |
+    - How should I raise complaints about dining?
+    - Where can I submit a dining complaint?
+    - What is the process for submitting a dining complaint?
+
+- intent: ask_complaint_social_media
+  examples: |
+    - Can I raise dining complaints on social media?
+    - Can I complain about the mess on social media?
+    - Am I allowed to email my complaint to everyone?
+
+- intent: ask_prohibited_items
+  examples: |
+    - What is the policy on drugs, alcohol, and smoking in the dining area?
+    - Are smoking and alcohol allowed in the mess?
+    - Can I drink alcohol in the dining facility?
+
+- intent: ask_mandatory_mess
+  examples: |
+    - Is mess compulsory for hostellers?
+    - Do I have to enroll in the mess?
+    - Can I opt-out of the mess service?
+
+- intent: ask_mess_rebate_apply
+  examples: |
+    - How do I apply for a mess rebate?
+    - What is the process to apply for a mess rebate?
+    - Can I request a rebate via email?
+
+- intent: ask_short_term_rebate
+  examples: |
+    - What is the duration for a short-term mess rebate?
+    - How many days can I get a short rebate?
+    - What is the maximum number of days for short-term rebate?
+
+- intent: ask_long_term_rebate
+  examples: |
+    - How can I apply for a long-term rebate?
+    - What is the process for long-term mess rebate?
+    - Do I need approval for a long-term mess rebate?
+
+- intent: ask_rebate_submission
+  examples: |
+    - When should rebate applications be submitted?
+    - What is the deadline for rebate application?
+    - How early should I apply for a rebate?
+
+- intent: ask_guest_meal_rebate
+  examples: |
+    - Can I eat as a guest if I'm on a mess rebate?
+    - If I'm on rebate, can I still eat at the mess?
+    - Can I avail food while on rebate?
+
+- intent: ask_full_rebate
+  examples: |
+    - What are valid reasons for a full mess rebate?
+    - When can I get a full mess rebate?
+    - Under what conditions can I claim a full rebate?
+
+- intent: ask_violation_rebate
+  examples: |
+    - What happens if I violate rebate rules?
+    - Are there penalties for breaking mess rebate rules?
+    - What is the fine for violating rebate policies?
+
+- intent: ask_rebate_policy_change
+  examples: |
+    - Can rebate rules change?
+    - Will mess rebate policies be updated?
+    - Do rebate rules remain the same every year?
+
+- intent: wifi_connection_help
+  examples: |
+    - How do I connect to IITI_Secure?
+    - How do I connect to IITI_Secure_5G?
+    - I need help with WiFi connection
+    - Steps to connect to IITI_Secure
+    - How to install WiFi certificate?
+    - How to connect to IITI WiFi?
+
+- intent: network_problem
+  examples: |
+    - I have a network problem
+    - My internet is not working
+    - I can't connect to the network
+    - There is a cable problem
+    - I think there is a configuration issue
+    - My network IP is not working
+    - I have a connectivity problem
+    - My network is down
+
+- intent: report_it_issue
+  examples: |
+    - How do I report an IT issue?
+    - I need to report a network problem
+    - How to create a ticket on IT HelpDesk?
+    - I want to report a system issue
+    - How to contact IT support?
+
+- intent: change_password
+  examples: |
+    - How do I change my internet login password?
+    - I want to change my password
+    - How to reset my internet password?
+    - Change my default internet password
+
+- intent: get_internet_account
+  examples: |
+    - How do I get an institute internet account?
+    - I need an official email ID
+    - How to get an internet account?
+    - Where do I fill the form for internet account?
+
+- intent: connect_to_network
+  examples: |
+    - How do I connect to the IITI network?
+    - I need to connect to the institute network
+    - How to use IITI_2.4G?
+    - How to use IITI_5G?
+    - How to connect to the institute WiFi?
+
+- intent: install_office_365
+  examples: |
+    - How do I install Office 365?
+    - I need help installing Office 365
+    - Steps to install Office 365
+
+- intent: install_matlab
+  examples: |
+    - How do I install MATLAB?
+    - I need help installing MATLAB on Linux
+    - How to install MATLAB on Windows?
+    - Steps to install MATLAB
+
+- intent: generate_ssh_key
+  examples: |
+    - How do I generate an SSH key?
+    - I need to generate a public key
+    - How to use PuTTYgen?
+    - Steps to generate RSA key
+
+- intent: vpn_configuration
+  examples: |
+    - How do I configure VPN?
+    - I need help with VPN configuration
+    - How to set up VPN on Windows?
+    - How to set up VPN on Linux?
+
+- intent: cyber_security_tips
+  examples: |
+    - How do I stay secure online?
+    - What are the do's and don'ts of cyber security?
+    - How to protect my online accounts?
+    - Tips for staying secure online
+
+- intent: contact_citc
+  examples: |
+    - How do I contact CITC?
+    - I need to contact the IT team
+    - How to reach CITC for VPN details?
+    - Contact information for CITC
+
+- intent: check_physical_connectivity
+  examples: |
+    - How do I check physical connectivity?
+    - My network cable is not working
+    - How to check if the cable is plugged properly?
+    - Are the LEDs glowing?
+
+- intent: check_ip_configuration
+  examples: |
+    - How do I check my IP configuration?
+    - What is my IP address?
+    - How to find my subnet mask?
+    - How to check my default gateway?
+
+- intent: ping_neighbor
+  examples: |
+    - How do I ping my neighbor's IP?
+    - Can I ping other systems in my building?
+    - How to check if I can reach another IP?
+
+- intent: telnet_gateway
+  examples: |
+    - How do I telnet to the gateway?
+    - Can I telnet to the gateway?
+    - Steps to telnet the gateway
+
+- intent: update_system
+  examples: |
+    - How do I update my system?
+    - I need to scan my device for viruses
+    - How to keep my system updated?
+    - How to check for system vulnerabilities?
+
+- intent: general_inquiry
+  examples: |
+    - What is the IT HelpDesk website?
+    - Where can I download the internet account form?
+    - What are the quick links for cyber security?
+    - How do I get help with IT services?
+    
+
+- intent: ask_academic_calendar
+  examples: |
+    - What is the academic calendar for 2024-25?
+    - Can you provide the semester schedule?
+    - When does the semester start?
+    - When is the mid-semester break?
+    - What are the important dates for exams?
+
+- intent: ask_class_schedule
+  examples: |
+    - When do classes start?
+    - What is the last day of teaching?
+    - When is the mid-semester examination?
+    - When do we have practical exams?
+
+- intent: ask_examinations
+  examples: |
+    - When are the end semester exams?
+    - What is the schedule for mid-semester exams?
+    - When will the grades be released?
+
+- intent: ask_holidays
+  examples: |
+    - When are the semester breaks?
+    - Are there any holidays in September?
+    - When is the winter vacation?
+
+- intent: ask_fee_related
+  examples: |
+    - When is the tuition fee remission notification?
+    - How can I apply for a fee waiver?
+
+- intent: ask_registration
+  examples: |
+    - When is the registration for the new semester?
+    - How do I register for courses?
+    - What is the last date to adjust my courses?
+
+- intent: ask_events
+  examples: |
+    - What events are scheduled on campus?
+    - When is the orientation program for new students?
+    - Is there a life skills development program?
+
+- intent: ask_supervisor_selection
+  examples: |
+    - When is the deadline to choose a supervisor for my thesis?
+    - How do I submit my BTech project details?
+
+- intent: inquire_department_faculty
+  examples: |
+    - Who are the faculty members of the [MEMS](department) department?
+    - Can you provide the faculty list for the [Computer Science](department) department?
+    - I want to know about the [Mechanical](department) department professors.
+    - Show me the faculty for the [Electrical](department) department.
+    - List the faculty members in the [Civil](department) Engineering department.
+    - Where can I find the [Math](department) department faculty details?
+    - Give me the [Physics](department) department faculty list.
+    - What are the faculty details for the [Chemical](department) Engineering department?
+
+- intent: nlu_fallback
+  examples: |
+    - I don't know what I'm asking
+    - This doesn't make sense
+    - What is the meaning of life?
+    - Random text input
+    - Can you fly?
+
+- intent: ask_dual_degree
+  examples: |
+    - What is the dual degree program at IIT Indore?
+    - Can I enroll in a dual degree?

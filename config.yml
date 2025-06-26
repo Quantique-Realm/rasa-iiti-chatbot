@@ -1,0 +1,32 @@
+recipe: default.v1
+
+assistant_id: IITI_Bot
+
+language: en
+
+version: "3.1"
+
+pipeline:
+  - name: "WhitespaceTokenizer"
+  - name: "RegexFeaturizer"
+  - name: "LexicalSyntacticFeaturizer"
+  - name: "actions.custom_components.SemanticInputNormalizerComponent"
+  - name: "CountVectorsFeaturizer"
+  - name: "DIETClassifier"
+    epochs: 300
+    constrain_similarities: true
+  - name: "EntitySynonymMapper"
+  - name: "ResponseSelector"
+    epochs: 300
+  - name: "FallbackClassifier"
+    threshold: 0.5
+
+policies:
+  - name: AugmentedMemoizationPolicy  # Improves memory for better responses
+  - name: MemoizationPolicy
+  - name: RulePolicy
+    core_fallback_action_name: "action_fallback_to_groq"
+    enable_fallback_prediction: True
+  - name: TEDPolicy
+    max_history: 10
+    epochs: 300

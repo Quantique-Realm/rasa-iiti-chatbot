@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-department",
+      "2": "I-department",
+      "3": "L-department",
+      "4": "U-department",
+      "5": "B-place_name",
+      "6": "I-place_name",
+      "7": "L-place_name",
+      "8": "U-place_name",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-department": 1,
+      "I-department": 2,
+      "L-department": 3,
+      "U-department": 4,
+      "B-place_name": 5,
+      "I-place_name": 6,
+      "L-place_name": 7,
+      "U-place_name": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

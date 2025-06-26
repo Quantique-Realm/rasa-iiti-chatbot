@@ -1,0 +1,492 @@
+### domain.yml ###
+version: "3.1"
+
+intents:
+  - set_reminder
+  - inform
+  - admission_process
+  - departments_offered
+  - registration_procedure
+  - contact_info
+  - course_structure
+  - change_branch
+  - scholarships
+  - grading_system
+  - hostel_facilities
+  - location
+  - greet
+  - goodbye
+  - navigate_campus
+  - eligibility_check
+  - category_certificate
+  - foreign_national_eligibility
+  - minimum_percentage_requirement
+  - backlog_eligibility
+  - age_limit
+  - exam_attempts
+  - application_correction
+  - application_fees
+  - mobile_number_requirement
+  - accepted_identity_documents
+  - payment_issue
+  - exam_centre_choice
+  - multiple_papers
+  - required_documents
+  - photo_signature_issue
+  - disability_assistance
+  - application_status
+  - admit_card
+  - exam_entry_requirements
+  - late_entry_policy
+  - application_withdrawal
+  - ask_library_access
+  - ask_library_behavior
+  - ask_marking_books
+  - ask_eating_smoking
+  - ask_personal_belongings
+  - ask_borrowing_limits
+  - ask_late_return
+  - ask_online_renewal
+  - ask_second_renewal
+  - ask_late_fee
+  - ask_lost_book
+  - ask_photocopy_replacement
+  - ask_multi_volume_loss
+  - ask_out_of_print_book
+  - ask_dining_mandatory
+  - ask_cooking_allowed
+  - ask_meal_timings
+  - ask_sick_meal
+  - ask_food_outside
+  - ask_kitchen_entry
+  - ask_meal_sharing
+  - ask_complaint_process
+  - ask_complaint_social_media
+  - ask_prohibited_items
+  - ask_mandatory_mess
+  - ask_mess_rebate_apply
+  - ask_short_term_rebate
+  - ask_long_term_rebate
+  - ask_rebate_submission
+  - ask_guest_meal_rebate
+  - ask_full_rebate
+  - ask_violation_rebate
+  - ask_rebate_policy_change
+  - wifi_connection_help
+  - network_problem
+  - report_it_issue
+  - change_password
+  - get_internet_account
+  - connect_to_network
+  - install_office_365
+  - install_matlab
+  - generate_ssh_key
+  - vpn_configuration
+  - cyber_security_tips
+  - contact_citc
+  - check_physical_connectivity
+  - check_ip_configuration
+  - ping_neighbor
+  - telnet_gateway
+  - update_system
+  - general_inquiry
+  - ask_academic_calendar
+  - ask_class_schedule
+  - ask_examinations
+  - ask_holidays
+  - ask_fee_related
+  - ask_registration
+  - ask_events
+  - ask_supervisor_selection
+  - ask_practical_exams
+  - ask_mid_sem_break
+  - ask_grade_release
+  - ask_re_exam
+  - ask_no_dues
+  - ask_dual_degree
+  - inquire_department_faculty
+  - nlu_fallback  # Ensure fallback intent exists
+
+slots:
+  place_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: place_name
+  department:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: department
+
+
+
+entities:
+  - place_name
+  - department
+
+actions:
+  - action_show_map
+  - action_fallback_to_groq  # Add this to register the Groq fallback action
+
+
+responses:
+  utter_ask_place_name:
+    - text: "Which building or place are you looking for?"
+
+  utter_greet:
+    - text: "Hello! How can I assist you today? 😊"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a great day! 😊"
+
+  utter_admission_process:
+    - text: "Admission is through JEE-Advanced followed by JoSAA counseling. More details: [JEE Advanced](https://jeeadv.ac.in/)"
+
+  utter_departments_offered:
+    - text: "IIT Indore offers B.Tech in Computer Science, Electrical, Mechanical, Civil, Metallurgical, Chemical Engineering, Mathematics & Computing, Engineering Physics, and Space Sciences."
+
+  utter_registration_procedure:
+    - text: "Registration details and required documents are available at: [Academic Portal](https://academic.iiti.ac.in/)"
+
+  utter_contact_info:
+    - text: "For UG admissions, contact:\n- Mr. Nitin Parashar: deputymanagerug@iiti.ac.in\n- Mr. Dushyant Pratap: manageracademic@iiti.ac.in"
+
+  utter_course_structure:
+    - text: "Course structure details can be found at: [Course Structure](https://academic.iiti.ac.in/academic_program.php)"
+
+  utter_location:
+    - text: "IIT Indore is 24 km from Indore Railway Station and 31 km from the Airport. Public bus M-19 connects the campus."
+
+  utter_grading_system:
+    - text: "IIT Indore follows a grading system based on CGPA. More details: [Grading System](https://academic.iiti.ac.in/Document/new2023/2023-July-UG-Rules+Policies+Curriculum+Syllabi-of-Courses%2023%20July%202023.pdf)"
+
+  utter_change_branch:
+    - text: "Students can apply for branch change after their first year, subject to eligibility criteria. More details: [Branch Change Policy](https://academic.iiti.ac.in/Document/new2023/2023-July-UG-Rules+Policies+Curriculum+Syllabi-of-Courses%2023%20July%202023.pdf)"
+
+  utter_hostel_facilities:
+    - text: "IIT Indore has six hostels with apartment-style rooms, sports facilities, and laundry services. There are separate hostels for boys and girls."
+
+  utter_scholarships:
+    - text: "IIT Indore offers scholarships such as SC/ST tuition fee exemption, merit-based scholarships, and financial aid for economically weaker students. More details: [Scholarships](https://academic.iiti.ac.in/Document/new2023/2023-July-UG-Rules+Policies+Curriculum+Syllabi-of-Courses%2023%20July%202023.pdf)"
+
+  utter_eligibility_check:
+    - text: "Candidates who have completed an undergraduate degree or are in the final year of their UG program are eligible to apply for JAM 2025."
+
+  utter_category_certificate:
+    - text: "You can apply with your existing OBC-NCL/EWS certificate. However, you must upload a valid certificate before the deadline; otherwise, you will be considered under the General category."
+
+  utter_foreign_national_eligibility:
+    - text: "Yes, foreign nationals are eligible to apply for JAM 2025."
+
+  utter_minimum_percentage_requirement:
+    - text: "No, there is no minimum percentage requirement for appearing in JAM 2025."
+
+  utter_backlog_eligibility:
+    - text: "Yes, candidates with backlogs are eligible to apply for JAM 2025."
+
+  utter_age_limit:
+    - text: "There is no age limit to appear for JAM 2025."
+
+  utter_exam_attempts:
+    - text: "There is no restriction on the number of times you can appear for the JAM exam."
+
+  utter_application_correction:
+    - text: "Yes, corrections can be made in the JAM application portal after scrutiny. Some corrections may require an additional fee."
+
+  utter_application_fees:
+    - text: "There is no fee for fixing defects identified during scrutiny. However, modifications in certain fields may require an additional fee."
+
+  utter_mobile_number_requirement:
+    - text: "Yes, a 10-digit Indian mobile number is mandatory. If you don't have one, you can use a friend or relative’s number."
+
+  utter_accepted_identity_documents:
+    - text: "Accepted ID proofs for Indian candidates: Aadhaar-UID, Passport, PAN Card, Voter ID, and Driving License. Foreign nationals can use a valid Passport or any government-issued photo ID."
+
+  utter_payment_issue:
+    - text: "If your payment is not reflected, log out and check again later. If the issue persists, retry the payment, or contact jam@admin.iitd.ac.in."
+
+  utter_exam_centre_choice:
+    - text: "You must select three examination cities. Your first choice is prioritized, but in case of excess demand, the second and third choices may be considered."
+
+  utter_multiple_papers:
+    - text: "No, you don't need to fill two forms. You can select up to two papers in a single application form."
+
+  utter_required_documents:
+    - text: "Required documents: Recent photograph, signature, 10th marksheet, and applicable category/PwD certificates."
+
+  utter_photo_signature_issue:
+    - text: "If your photo or signature does not meet specifications, your application will be marked defective. You will be notified via email/SMS to upload a corrected version."
+
+  utter_disability_assistance:
+    - text: "Persons with 40% or more disabilities are eligible for assistance. Those with less than 40% disability but difficulty in writing may also request a scribe."
+
+  utter_application_status:
+    - text: "You can check your JAM application status by logging into the JAM 2025 website. If corrections are needed, you will be notified."
+
+  utter_admit_card:
+    - text: "Admit Cards will be available for download from the JAM 2025 website in the first week of January 2025. They will not be sent via email or post."
+
+  utter_exam_entry_requirements:
+    - text: "Candidates must bring their Admit Card and original photo ID (same as used in the application). Photocopies or soft copies are not allowed."
+
+  utter_late_entry_policy:
+    - text: "No extra time will be given for candidates who enter the exam hall late."
+
+  utter_application_withdrawal:
+    - text: "No, once submitted, you cannot withdraw your JAM application, and the fee is non-refundable."
+
+  utter_ask_library_access:
+    - text: "Yes. The library follows an Open Access System. Students can take books from the stacks to the Reading Room for browsing. However, they should leave the books on the tables after use and not shelve them back, as 'A Book Misplaced is a Book Lost.'"
+
+  utter_ask_library_behavior:
+    - text: "Every user has the right to a peaceful environment. Maintain silence, avoid disturbing others, and refrain from using mobile phones loudly."
+
+  utter_ask_marking_books:
+    - text: "No. Underlining, marking, tearing, folding pages, or damaging library books/materials is strictly prohibited. Violation may lead to debarment from library usage."
+
+  utter_ask_eating_smoking:
+    - text: "No. Eating, smoking, and littering inside the library premises are strictly prohibited."
+
+  utter_ask_personal_belongings:
+    - text: "Bags and personal books (except money and valuables) must be left outside in the Luggage Racks. Notepapers, notebooks, and laptops are allowed inside."
+
+  utter_ask_borrowing_limits:
+    - text: "The borrowing limit and loan period vary by user category. Faculty can borrow up to 40 books for 180 days, while UG students can borrow 8 books for 15 days. Other categories have different limits."
+
+  utter_ask_late_return:
+    - text: "After 3 overdue notices, no further books will be issued until overdue books are returned and the late fee is paid. The late fee is Rs. 2/- per day per book."
+
+  utter_ask_online_renewal:
+    - text: "Yes. Books can be renewed once online on or before the due date if no other user demands them. Late renewals are allowed online after paying the late fee."
+
+  utter_ask_second_renewal:
+    - text: "For the second renewal, books must be physically brought to the library for re-issuance."
+
+  utter_ask_late_fee:
+    - text: "The late fee is Rs. 2/- per day per book for all users."
+
+  utter_ask_lost_book:
+    - text: "If a book is lost or damaged, replace it with the exact/latest edition and pay any applicable late fee. If unable to replace, pay the book price plus 10% processing fee or Rs. 100/-, whichever is higher."
+
+  utter_ask_photocopy_replacement:
+    - text: "No. Photocopies and softcover editions are not accepted as replacements for lost library books if the original was hardcover."
+
+  utter_ask_multi_volume_loss:
+    - text: "You must pay for the entire set as per the publisher's price, plus late fees and a 10% processing fee or Rs. 100/-, whichever is higher."
+
+  utter_ask_out_of_print_book:
+    - text: "You must pay Rs. 500/- OR the publisher's list price OR online price (Amazon, etc.), whichever is higher, plus late fees and a 10% processing fee or Rs. 100/-, whichever is higher."
+
+  utter_ask_dining_mandatory:
+    - text: "Yes, all hostellers must dine in the central dining facility with one of the caterers."
+
+  utter_ask_cooking_allowed:
+    - text: "No, cooking is strictly prohibited in hostels."
+
+  utter_ask_meal_timings:
+    - text: "Meals are served strictly during designated timings. No food will be served outside those hours."
+
+  utter_ask_sick_meal:
+    - text: "In case of illness, sick diet will be provided upon written advice from the Institute Health Centre. Inform the caterer in advance for special meals."
+
+  utter_ask_food_outside:
+    - text: "No. Food and utensils must not be taken outside the dining hall, except in illness cases."
+
+  utter_ask_kitchen_entry:
+    - text: "No. Only the Students' Dining Committee members inspecting the kitchen/store are allowed inside."
+
+  utter_ask_meal_sharing:
+    - text: "No, meal sharing is not allowed. Each student must take their own plate."
+
+  utter_ask_complaint_process:
+    - text: "Submit complaints officially through the Hall of Residence Portal or via the Student Gymkhana. Language should be formal and objective."
+
+  utter_ask_complaint_social_media:
+    - text: "No. Using social media, press, or mass emails for grievances is strictly prohibited. Approach the correct authority."
+
+  utter_ask_prohibited_items:
+    - text: "Drugs and alcohol are strictly prohibited. Smoking is strictly prohibited in the dining facility. Violations may lead to expulsion from hostel or institute."
+
+  utter_ask_mandatory_mess:
+    - text: "Yes. Mess is mandatory. Students cannot mess out or claim rebates on their own."
+
+  utter_ask_mess_rebate_apply:
+    - text: "Inform the caterer through the Dining Committee and submit the prescribed form. Email requests are not accepted."
+
+  utter_ask_short_term_rebate:
+    - text: "Short-term rebate is allowed for 2 to 7 consecutive days with a maximum of 8 days per month."
+
+  utter_ask_long_term_rebate:
+    - text: "For periods exceeding 7 days, apply with Faculty Advisor/Supervisor/HoD recommendation."
+
+  utter_ask_rebate_submission:
+    - text: "Submit your application two days in advance, latest by 5 p.m., before the rebate period starts."
+
+  utter_ask_guest_meal_rebate:
+    - text: "No. Residents on rebate cannot avail meals or extras even as a guest."
+
+  utter_ask_full_rebate:
+    - text: "Full rebate is allowed if you are on vacation declared by the Institute, out of station with documentary proof, on medical leave certified by the Institute Health Centre, or unable to eat mess food due to health reasons certified by the Health Centre."
+
+  utter_ask_violation_rebate:
+    - text: "Violations lead to penalty/fine deposited in the Institute account."
+
+  utter_ask_rebate_policy_change:
+    - text: "Yes, rebate rules may change from time to time. Latest rules prevail."
+
+  utter_wifi_connection_help:
+    - text: "To connect to IITI_Secure or IITI_Secure_5G, follow these steps:\n1. Download the WiFi certificate.\n2. Install the certificate on your device.\n3. Configure the WiFi settings with EAP Method: PEAP, Phase 2 Authentication: MSCHAPV2, and CA Certificate: IITI-WIFI.\n4. Enter your username and password.\n5. Save and connect."
+    - text: "Here’s how to connect to IITI WiFi:\n1. Install the WiFi certificate.\n2. Set up the network with EAP Method: PEAP and CA Certificate: IITI-WIFI.\n3. Use your credentials to log in."
+
+  utter_network_problem:
+    - text: "If you're facing network issues, please check:\n1. Physical connectivity (cables, LEDs).\n2. IP configuration (use `ipconfig` or `ifconfig`).\n3. Ping your neighbor's IP to test connectivity.\nIf the issue persists, report it to the IT HelpDesk."
+    - text: "For network problems, ensure:\n1. Cables are properly connected.\n2. Your IP settings are correct.\n3. You can ping nearby systems.\nIf unresolved, contact IT support."
+
+  utter_report_it_issue:
+    - text: "To report an IT issue, visit the IT HelpDesk website: http://ithelpdesk.iiti.ac.in/ and create a ticket. Provide details of the issue for faster resolution."
+    - text: "You can report IT issues by creating a ticket on the IT HelpDesk portal: http://ithelpdesk.iiti.ac.in/."
+
+  utter_change_password:
+    - text: "To change your internet login password, visit: https://idpass1.iiti.ac.in/ and follow the instructions."
+    - text: "You can reset your internet password at: https://idpass1.iiti.ac.in/."
+
+  utter_get_internet_account:
+    - text: "To get an institute internet account, fill out form A6 and submit it at the HUB building, First Floor, Room 109."
+    - text: "Download the internet account form, fill it out, and submit it at the HUB building, Room 109."
+
+  utter_connect_to_network:
+    - text: "To connect to the IITI network, use your username and password. The WiFi SSIDs are IITI_2.4G and IITI_5G."
+    - text: "Connect to the institute network using the SSIDs IITI_2.4G or IITI_5G and your login credentials."
+
+  utter_install_office_365:
+    - text: "To install Office 365, follow the installation guide provided by the IT department. You can find the manual on the IT HelpDesk portal."
+    - text: "Download and install Office 365 using the manual available on the IT HelpDesk website."
+
+  utter_install_matlab:
+    - text: "To install MATLAB, visit: https://in.mathworks.com/academia/tah-portal/indian-institute-of-technology-indore-31439162.html and log in with your institute email."
+    - text: "Install MATLAB by logging into the MATLAB portal with your institute email."
+
+  utter_generate_ssh_key:
+    - text: "To generate an SSH key:\n1. Open PuTTYgen.\n2. Click 'Generate'.\n3. Add a passphrase and save the keys.\n4. Copy the public key and share it with the IT team."
+    - text: "Use PuTTYgen to generate SSH keys. Save the keys and share the public key with the IT team."
+
+  utter_vpn_configuration:
+    - text: "For VPN configuration, contact CITC for detailed instructions."
+    - text: "Please reach out to CITC for assistance with VPN setup."
+
+  utter_cyber_security_tips:
+    - text: "To stay secure online:\n1. Use strong passwords.\n2. Avoid public Wi-Fi for confidential tasks.\n3. Keep your system updated.\n4. Report suspicious activity to CITC."
+    - text: "Follow these cyber security tips:\n1. Use unique passwords.\n2. Avoid phishing emails.\n3. Lock your devices when not in use."
+
+  utter_contact_citc:
+    - text: "You can contact CITC for IT-related queries. Visit the IT HelpDesk website for contact details."
+    - text: "Reach out to CITC for assistance. Their contact information is available on the IT HelpDesk portal."
+
+  utter_check_physical_connectivity:
+    - text: "To check physical connectivity:\n1. Ensure the network cable is properly plugged in.\n2. Check if the LEDs are glowing.\n3. Replug the cable if necessary."
+    - text: "Check if the network cable is connected and the LEDs are glowing. If not, replug the cable."
+
+  utter_check_ip_configuration:
+    - text: "To check your IP configuration:\n1. On Windows, use `ipconfig /all`.\n2. On Linux, use `/sbin/ifconfig`."
+    - text: "Use `ipconfig /all` on Windows or `/sbin/ifconfig` on Linux to check your IP settings."
+
+  utter_ping_neighbor:
+    - text: "To ping another system, use the command: `ping x.x.x.x` (replace x.x.x.x with the IP address)."
+    - text: "Use the `ping` command followed by the IP address to test connectivity."
+
+  utter_telnet_gateway:
+    - text: "To telnet to the gateway, use the command: `telnet <gateway IP>`."
+    - text: "Use the `telnet` command followed by the gateway IP to connect."
+
+  utter_update_system:
+    - text: "To update your system:\n1. Regularly install updates.\n2. Scan for viruses and malware.\n3. Avoid using infected USB drives."
+    - text: "Keep your system updated and scan for viruses to ensure security."
+
+  utter_general_inquiry:
+    - text: "For general IT inquiries, visit the IT HelpDesk website: http://ithelpdesk.iiti.ac.in/."
+    - text: "You can find answers to general IT questions on the IT HelpDesk portal."
+
+  utter_ask_academic_calendar:
+    - text: "The academic calendar for 2024-25 includes key dates for registration, exams, and vacations. Would you like details on a specific event?"
+
+  utter_ask_class_schedule:
+    - text: "Classes for the Autumn Semester start on August 2, 2024, and the last day of teaching is November 22, 2024. The Spring Semester starts on January 6, 2025, and ends on May 1, 2025."
+
+  utter_ask_examinations:
+    - text: "Mid Semester Exams (MSE) are from September 17-24, 2024, and End Semester Exams (ESE) are from November 23-30, 2024."
+
+  utter_ask_practical_exams:
+    - text: "Practical exams for the Autumn Semester will be conducted from November 14-19, 2024, and for the Spring Semester from April 26-30, 2025."
+
+  utter_ask_holidays:
+    - text: "The semester break is from December 5, 2024, to January 2, 2025. Another break is from May 17 - July 21, 2025."
+
+  utter_ask_fee_related:
+    - text: "The tuition fee remission notification for B.Tech 1st-year students will be released on August 5, 2024."
+
+  utter_ask_registration:
+    - text: "Course registration for the next semester is from November 4-8, 2024. You can also adjust your courses on August 8, 2024."
+
+  utter_ask_events:
+    - text: "The Orientation Program for new students is on July 26, 2024, followed by a Life Skills Development Program from July 27 - August 1, 2024."
+
+  utter_ask_supervisor_selection:
+    - text: "The deadline to submit the form for supervisor selection and thesis topic is April 2, 2025."
+
+  utter_ask_mid_sem_break:
+    - text: "The Mid Semester Break (MSB) for BTech 1st-year and Preparatory students is from September 29 - October 6, 2024, in the Autumn Semester, and from March 11-16, 2025, in the Spring Semester."
+
+  utter_ask_grade_release:
+    - text: "Grades for the Autumn Semester will be released on December 11, 2024, and for the Spring Semester on May 23, 2025."
+
+  utter_ask_re_exam:
+    - text: "Students with medical emergencies can request a re-exam by November 30, 2024, for the Autumn Semester and by May 13, 2025, for the Spring Semester."
+
+  utter_ask_no_dues:
+    - text: "The online no-dues process for graduating UG students will take place from May 5-9, 2025."
+
+  utter_ask_dual_degree:
+    - text: "Applications for converting to a dual degree must be submitted by May 30, 2025. The list of provisionally selected students will be announced on June 6, 2025."
+
+  utter_inquire_department_faculty:
+    - condition:
+        - type: slot
+          name: department
+          value: mems
+      text: "Here are the faculty details for the MEMS department: https://mems.iiti.ac.in/faculty"
+    - condition:
+        - type: slot
+          name: department
+          value: cse
+      text: "Here are the faculty details for the Computer Science department: https://cse.iiti.ac.in/faculty.php"
+    - condition:
+        - type: slot
+          name: department
+          value: mechanical
+      text: "Here are the faculty details for the Mechanical department: https://people.iiti.ac.in/~meiiti/index.php/http-people-iiti-ac-in-meiiti-index-php-dr-sandeep-singh-2/"
+    - condition:
+        - type: slot
+          name: department
+          value: electrical
+      text: "Here are the faculty details for the Electrical department: https://ee.iiti.ac.in/#/people/Faculty"
+    - condition:
+        - type: slot
+          name: department
+          value: civil
+      text: "Here are the faculty details for the Civil Engineering department: https://ce.iiti.ac.in/faculty.php"
+    - condition:
+        - type: slot
+          name: department
+          value: math
+      text: "Here are the faculty details for the Math department: https://math.iiti.ac.in/faculty/"
+    - condition:
+        - type: slot
+          name: department
+          value: physics
+      text: "Here are the faculty details for the Physics department: https://physics.iiti.ac.in/faculty/"
+    - condition:
+        - type: slot
+          name: department
+          value: chemical
+      text: "Here are the faculty details for the Chemical Engineering department: https://chemical.iiti.ac.in/main/core_faculty"

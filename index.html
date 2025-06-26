@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Avatar Chatbot | IIT Indore</title>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.module.min.js",
+                "GLTFLoader": "https://cdn.jsdelivr.net/npm/three@0.128/examples/jsm/loaders/GLTFLoader.js"
+            }
+        }
+    </script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            background: #0d1b2a;
+            font-family: Arial, sans-serif;
+        }
+        #avatarContainer { width: 60%; height: 100vh; position: relative; }
+        #chatContainer {
+            width: 40%; height: 100vh;
+            background: #1e293b; color: white;
+            display: flex; flex-direction: column;
+            justify-content: space-between; padding: 15px;
+            border-left: 4px solid #007bff;
+        }
+        #chatBox { flex-grow: 1; overflow-y: auto; padding: 10px; max-height: 80vh; background: #16202a; border-radius: 8px; }
+        #chatInput { display: flex; padding: 10px; border-top: 2px solid #007bff; }
+        #userMessage {
+            flex-grow: 1; padding: 12px; font-size: 16px;
+            border: none; border-radius: 5px; background: #ffffff; color: black;
+        }
+        #sendMessage { padding: 12px 18px; margin-left: 10px; font-size: 16px; cursor: pointer;
+            background: #007bff; color: white; border: none; border-radius: 5px; transition: 0.3s;
+        }
+        #sendMessage:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <div id="avatarContainer"></div>
+    <div id="chatContainer">
+        <div id="chatBox"></div>
+        <div id="chatInput">
+            <input type="text" id="userMessage" placeholder="Type your message..." />
+            <button id="sendMessage">Send</button>
+        </div>
+    </div>
+    <script type="module">
+        import * as THREE from 'three';
+        import { GLTFLoader } from 'GLTFLoader';
+
+        let scene, camera, renderer, avatar, mixer, mouthBlendShapeIndex, handBone;
+
+        function init() {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x0d1b2a);
+            camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 0.1, 1000);
+            camera.position.set(0, 1.6, 3);
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth * 0.6, window.innerHeight);
+            document.getElementById("avatarContainer").appendChild(renderer.domElement);
+
+            const light = new THREE.HemisphereLight(0xffffff, 0x444444, 1);
+            scene.add(light);
+
+            const loader = new GLTFLoader();
+            loader.load('avatar.glb', function (gltf) {
+                avatar = gltf.scene;
+                scene.add(avatar);
+                
+                avatar.traverse((child) => {
+                    if (child.isMesh && child.morphTargetDictionary) {
+                        mouthBlendShapeIndex = child.morphTargetDictionary["mouthOpen"];
+                        child.morphTargetInfluences[mouthBlendShapeIndex] = 0; // Ensure mouth starts closed
+                    }
+                    if (child.isBone && child.name.includes("Hand")) {
+                        handBone = child;
+                    }
+                });
+                animate();
+            });
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+
+        init();
+
+        const chatBox = document.getElementById("chatBox");
+        const userInput = document.getElementById("userMessage");
+        const sendButton = document.getElementById("sendMessage");
+
+        function speak(text) {
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = 1;
+
+            utterance.onstart = () => startAnimations();
+            utterance.onend = () => stopAnimations();
+            
+            speechSynthesis.speak(utterance);
+        }
+
+        function startAnimations() {
+            let interval;
+
+            avatar.traverse((child) => {
+                if (child.isMesh && child.morphTargetInfluences && mouthBlendShapeIndex !== undefined) {
+                    interval = setInterval(() => {
+                        child.morphTargetInfluences[mouthBlendShapeIndex] = Math.random(); // Simulate talking
+                    }, 100);
+                }
+            });
+
+            if (handBone) {
+                let rotationDirection = 1;
+                let handInterval = setInterval(() => {
+                    handBone.rotation.z += 0.05 * rotationDirection;
+                    if (Math.abs(handBone.rotation.z) > 0.5) {
+                        rotationDirection *= -1;
+                    }
+                }, 100);
+                setTimeout(() => clearInterval(handInterval), 3000);
+            }
+
+            setTimeout(() => clearInterval(interval), 3000);
+        }
+
+        function stopAnimations() {
+            avatar.traverse((child) => {
+                if (child.isMesh && child.morphTargetInfluences && mouthBlendShapeIndex !== undefined) {
+                    child.morphTargetInfluences[mouthBlendShapeIndex] = 0;
+                }
+            });
+        }
+
+        function addMessage(sender, text) {
+            const messageElement = document.createElement("div");
+            messageElement.style.marginBottom = "10px";
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${text}`;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        sendButton.addEventListener("click", async () => {
+            const userMessage = userInput.value.trim();
+            if (userMessage === "") return;
+
+            addMessage("You", userMessage);
+            userInput.value = "";
+
+            const response = await fetch("http://localhost:5005/webhooks/rest/webhook", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ sender: "user", message: userMessage })
+            });
+            const responseData = await response.json();
+            if (responseData.length > 0) {
+                const botResponse = responseData[0].text;
+                addMessage("AI", botResponse);
+                speak(botResponse);
+            }
+        });
+    </script>
+</body>
+</html>

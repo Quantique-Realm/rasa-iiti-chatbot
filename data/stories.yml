@@ -1,0 +1,520 @@
+version: "3.1"
+
+stories:
+- story: greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: farewell
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: admission process
+  steps:
+  - intent: admission_process
+  - action: utter_admission_process
+
+- story: departments offered
+  steps:
+  - intent: departments_offered
+  - action: utter_departments_offered
+
+- story: registration procedure
+  steps:
+  - intent: registration_procedure
+  - action: utter_registration_procedure
+
+- story: contact information
+  steps:
+  - intent: contact_info
+  - action: utter_contact_info
+
+- story: course structure
+  steps:
+  - intent: course_structure
+  - action: utter_course_structure
+
+- story: branch change query
+  steps:
+  - intent: change_branch
+  - action: utter_change_branch
+
+- story: scholarship details
+  steps:
+  - intent: scholarships
+  - action: utter_scholarships
+
+- story: grading system details
+  steps:
+  - intent: grading_system
+  - action: utter_grading_system
+
+- story: hostel information
+  steps:
+  - intent: hostel_facilities
+  - action: utter_hostel_facilities
+
+- story: campus location
+  steps:
+  - intent: location
+  - action: utter_location
+
+- story: user asks for campus directions
+  steps:
+  - intent: navigate_campus
+  - action: action_show_map
+
+- story: Check Eligibility
+  steps:
+    - intent: eligibility_check
+    - action: utter_eligibility_check
+
+- story: Category Certificate Requirement
+  steps:
+    - intent: category_certificate
+    - action: utter_category_certificate
+
+- story: Foreign National Eligibility
+  steps:
+    - intent: foreign_national_eligibility
+    - action: utter_foreign_national_eligibility
+
+- story: Minimum Percentage Requirement
+  steps:
+    - intent: minimum_percentage_requirement
+    - action: utter_minimum_percentage_requirement
+
+- story: Backlog Eligibility
+  steps:
+    - intent: backlog_eligibility
+    - action: utter_backlog_eligibility
+
+- story: Age Limit
+  steps:
+    - intent: age_limit
+    - action: utter_age_limit
+
+- story: Exam Attempt Restrictions
+  steps:
+    - intent: exam_attempts
+    - action: utter_exam_attempts
+
+- story: Application Correction Process
+  steps:
+    - intent: application_correction
+    - action: utter_application_correction
+
+- story: Application Fees Query
+  steps:
+    - intent: application_fees
+    - action: utter_application_fees
+
+- story: Mobile Number Requirement
+  steps:
+    - intent: mobile_number_requirement
+    - action: utter_mobile_number_requirement
+
+- story: Accepted Identity Documents
+  steps:
+    - intent: accepted_identity_documents
+    - action: utter_accepted_identity_documents
+
+- story: Payment Issues
+  steps:
+    - intent: payment_issue
+    - action: utter_payment_issue
+
+- story: Exam Centre Selection
+  steps:
+    - intent: exam_centre_choice
+    - action: utter_exam_centre_choice
+
+- story: Multiple Papers in JAM
+  steps:
+    - intent: multiple_papers
+    - action: utter_multiple_papers
+
+- story: Required Documents for Application
+  steps:
+    - intent: required_documents
+    - action: utter_required_documents
+
+- story: Photo/Signature Upload Issue
+  steps:
+    - intent: photo_signature_issue
+    - action: utter_photo_signature_issue
+
+- story: Disability Assistance
+  steps:
+    - intent: disability_assistance
+    - action: utter_disability_assistance
+
+- story: Check Application Status
+  steps:
+    - intent: application_status
+    - action: utter_application_status
+
+- story: Admit Card Download
+  steps:
+    - intent: admit_card
+    - action: utter_admit_card
+
+- story: Exam Entry Requirements
+  steps:
+    - intent: exam_entry_requirements
+    - action: utter_exam_entry_requirements
+
+- story: Late Entry Policy
+  steps:
+    - intent: late_entry_policy
+    - action: utter_late_entry_policy
+
+- story: Application Withdrawal
+  steps:
+    - intent: application_withdrawal
+    - action: utter_application_withdrawal
+
+- story: Ask about library access
+  steps:
+  - intent: ask_library_access
+  - action: utter_ask_library_access
+
+- story: Ask about expected behavior in the library
+  steps:
+  - intent: ask_library_behavior
+  - action: utter_ask_library_behavior
+
+- story: Ask about marking books
+  steps:
+  - intent: ask_marking_books
+  - action: utter_ask_marking_books
+
+- story: Ask about eating and smoking in the library
+  steps:
+  - intent: ask_eating_smoking
+  - action: utter_ask_eating_smoking
+
+- story: Ask about carrying personal belongings
+  steps:
+  - intent: ask_personal_belongings
+  - action: utter_ask_personal_belongings
+
+- story: Ask about borrowing limits
+  steps:
+  - intent: ask_borrowing_limits
+  - action: utter_ask_borrowing_limits
+
+- story: Ask about late book returns
+  steps:
+  - intent: ask_late_return
+  - action: utter_ask_late_return
+
+- story: Ask about online book renewal
+  steps:
+  - intent: ask_online_renewal
+  - action: utter_ask_online_renewal
+
+- story: Ask about second book renewal
+  steps:
+  - intent: ask_second_renewal
+  - action: utter_ask_second_renewal
+
+- story: Ask about late fees
+  steps:
+  - intent: ask_late_fee
+  - action: utter_ask_late_fee
+
+- story: Ask about lost or damaged books
+  steps:
+  - intent: ask_lost_book
+  - action: utter_ask_lost_book
+
+- story: Ask about photocopy replacements
+  steps:
+  - intent: ask_photocopy_replacement
+  - action: utter_ask_photocopy_replacement
+
+- story: Ask about losing one volume of a set
+  steps:
+  - intent: ask_multi_volume_loss
+  - action: utter_ask_multi_volume_loss
+
+- story: Ask about lost out-of-print books
+  steps:
+  - intent: ask_out_of_print_book
+  - action: utter_ask_out_of_print_book
+
+- story: Ask if dining is mandatory
+  steps:
+  - intent: ask_dining_mandatory
+  - action: utter_ask_dining_mandatory
+
+- story: Ask if cooking is allowed in hostel
+  steps:
+  - intent: ask_cooking_allowed
+  - action: utter_ask_cooking_allowed
+
+- story: Ask about meal timings
+  steps:
+  - intent: ask_meal_timings
+  - action: utter_ask_meal_timings
+
+- story: Ask about sick meal
+  steps:
+  - intent: ask_sick_meal
+  - action: utter_ask_sick_meal
+
+- story: Ask if food can be taken outside
+  steps:
+  - intent: ask_food_outside
+  - action: utter_ask_food_outside
+
+- story: Ask if kitchen entry is allowed
+  steps:
+  - intent: ask_kitchen_entry
+  - action: utter_ask_kitchen_entry
+
+- story: Ask if meal sharing is allowed
+  steps:
+  - intent: ask_meal_sharing
+  - action: utter_ask_meal_sharing
+
+- story: Ask how to raise a complaint
+  steps:
+  - intent: ask_complaint_process
+  - action: utter_ask_complaint_process
+
+- story: Ask if complaints can be raised on social media
+  steps:
+  - intent: ask_complaint_social_media
+  - action: utter_ask_complaint_social_media
+
+- story: Ask about prohibited items in dining area
+  steps:
+  - intent: ask_prohibited_items
+  - action: utter_ask_prohibited_items
+
+- story: Ask if mess is mandatory
+  steps:
+  - intent: ask_mandatory_mess
+  - action: utter_ask_mandatory_mess
+
+- story: Ask how to apply for mess rebate
+  steps:
+  - intent: ask_mess_rebate_apply
+  - action: utter_ask_mess_rebate_apply
+
+- story: Ask about short-term mess rebate
+  steps:
+  - intent: ask_short_term_rebate
+  - action: utter_ask_short_term_rebate
+
+- story: Ask about long-term mess rebate
+  steps:
+  - intent: ask_long_term_rebate
+  - action: utter_ask_long_term_rebate
+
+- story: Ask when to submit rebate application
+  steps:
+  - intent: ask_rebate_submission
+  - action: utter_ask_rebate_submission
+
+- story: Ask if a person on rebate can eat as a guest
+  steps:
+  - intent: ask_guest_meal_rebate
+  - action: utter_ask_guest_meal_rebate
+
+- story: Ask for valid reasons for full rebate
+  steps:
+  - intent: ask_full_rebate
+  - action: utter_ask_full_rebate
+
+- story: Ask about rebate rule violations
+  steps:
+  - intent: ask_violation_rebate
+  - action: utter_ask_violation_rebate
+
+- story: Ask if rebate policies change
+  steps:
+  - intent: ask_rebate_policy_change
+  - action: utter_ask_rebate_policy_change
+
+
+- story: WiFi connection help
+  steps:
+  - intent: wifi_connection_help
+  - action: utter_wifi_connection_help
+
+- story: Network problem
+  steps:
+  - intent: network_problem
+  - action: utter_network_problem
+
+- story: Report IT issue
+  steps:
+  - intent: report_it_issue
+  - action: utter_report_it_issue
+
+- story: Change password
+  steps:
+  - intent: change_password
+  - action: utter_change_password
+
+- story: Get internet account
+  steps:
+  - intent: get_internet_account
+  - action: utter_get_internet_account
+
+- story: Connect to network
+  steps:
+  - intent: connect_to_network
+  - action: utter_connect_to_network
+
+- story: Install Office 365
+  steps:
+  - intent: install_office_365
+  - action: utter_install_office_365
+
+- story: Install MATLAB
+  steps:
+  - intent: install_matlab
+  - action: utter_install_matlab
+
+- story: Generate SSH key
+  steps:
+  - intent: generate_ssh_key
+  - action: utter_generate_ssh_key
+
+- story: VPN configuration
+  steps:
+  - intent: vpn_configuration
+  - action: utter_vpn_configuration
+
+- story: Cyber security tips
+  steps:
+  - intent: cyber_security_tips
+  - action: utter_cyber_security_tips
+
+- story: Contact CITC
+  steps:
+  - intent: contact_citc
+  - action: utter_contact_citc
+
+- story: Check physical connectivity
+  steps:
+  - intent: check_physical_connectivity
+  - action: utter_check_physical_connectivity
+
+- story: Check IP configuration
+  steps:
+  - intent: check_ip_configuration
+  - action: utter_check_ip_configuration
+
+- story: Ping neighbor
+  steps:
+  - intent: ping_neighbor
+  - action: utter_ping_neighbor
+
+- story: Telnet gateway
+  steps:
+  - intent: telnet_gateway
+  - action: utter_telnet_gateway
+
+- story: Update system
+  steps:
+  - intent: update_system
+  - action: utter_update_system
+
+- story: General inquiry
+  steps:
+  - intent: general_inquiry
+  - action: utter_general_inquiry
+
+- story: Fallback story
+  steps:
+  - intent: out_of_scope
+  - action: action_default_fallback
+
+- story: Provide academic calendar details
+  steps:
+    - intent: ask_academic_calendar
+    - action: utter_ask_academic_calendar
+
+- story: Provide class schedule
+  steps:
+    - intent: ask_class_schedule
+    - action: utter_ask_class_schedule
+
+- story: Provide examination schedule
+  steps:
+    - intent: ask_examinations
+    - action: utter_ask_examinations
+
+- story: Provide practical exam schedule
+  steps:
+    - intent: ask_practical_exams
+    - action: utter_ask_practical_exams
+
+- story: Provide holiday details
+  steps:
+    - intent: ask_holidays
+    - action: utter_ask_holidays
+
+- story: Provide fee-related information
+  steps:
+    - intent: ask_fee_related
+    - action: utter_ask_fee_related
+
+- story: Provide registration details
+  steps:
+    - intent: ask_registration
+    - action: utter_ask_registration
+
+- story: Provide event details
+  steps:
+    - intent: ask_events
+    - action: utter_ask_events
+
+- story: Provide supervisor selection details
+  steps:
+    - intent: ask_supervisor_selection
+    - action: utter_ask_supervisor_selection
+
+- story: Provide mid-semester break details
+  steps:
+    - intent: ask_mid_sem_break
+    - action: utter_ask_mid_sem_break
+
+- story: Provide grade release information
+  steps:
+    - intent: ask_grade_release
+    - action: utter_ask_grade_release
+
+- story: Provide re-exam request information
+  steps:
+    - intent: ask_re_exam
+    - action: utter_ask_re_exam
+
+- story: Provide no-dues submission details
+  steps:
+    - intent: ask_no_dues
+    - action: utter_ask_no_dues
+
+- story: Provide dual degree conversion details
+  steps:
+    - intent: ask_dual_degree
+    - action: utter_ask_dual_degree
+
+- story: User asks about department faculty
+  steps:
+    - intent: inquire_department_faculty
+    - slot_was_set:
+        - department: mems
+    - action: utter_inquire_department_faculty
+
+- story: Ask for a place inside IIT Indore
+  steps:
+    - intent: ask_place
+    - action: utter_ask_place_name

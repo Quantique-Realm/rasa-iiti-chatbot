@@ -1,0 +1,515 @@
+version: "3.1"
+
+rules:
+- rule: Respond to greetings
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Respond to goodbyes
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Respond to admission queries
+  steps:
+  - intent: admission_process
+  - action: utter_admission_process
+
+- rule: Respond to department queries
+  steps:
+  - intent: departments_offered
+  - action: utter_departments_offered
+
+- rule: Respond to registration queries
+  steps:
+  - intent: registration_procedure
+  - action: utter_registration_procedure
+
+- rule: Respond to contact queries
+  steps:
+  - intent: contact_info
+  - action: utter_contact_info
+
+- rule: Respond to course structure queries
+  steps:
+  - intent: course_structure
+  - action: utter_course_structure
+
+- rule: Respond to branch change queries
+  steps:
+  - intent: change_branch
+  - action: utter_change_branch
+
+- rule: Respond to scholarship queries
+  steps:
+  - intent: scholarships
+  - action: utter_scholarships
+
+- rule: Respond to grading system queries
+  steps:
+  - intent: grading_system
+  - action: utter_grading_system
+
+- rule: Respond to hostel facilities queries
+  steps:
+  - intent: hostel_facilities
+  - action: utter_hostel_facilities
+
+- rule: Respond to location queries
+  steps:
+  - intent: location
+  - action: utter_location
+
+- rule: Respond to eligibility check
+  steps:
+    - intent: eligibility_check
+    - action: utter_eligibility_check
+
+- rule: Respond to category certificate requirement
+  steps:
+    - intent: category_certificate
+    - action: utter_category_certificate
+
+- rule: Respond to foreign national eligibility
+  steps:
+    - intent: foreign_national_eligibility
+    - action: utter_foreign_national_eligibility
+
+- rule: Respond to minimum percentage requirement
+  steps:
+    - intent: minimum_percentage_requirement
+    - action: utter_minimum_percentage_requirement
+
+- rule: Respond to backlog eligibility
+  steps:
+    - intent: backlog_eligibility
+    - action: utter_backlog_eligibility
+
+- rule: Respond to age limit query
+  steps:
+    - intent: age_limit
+    - action: utter_age_limit
+
+- rule: Respond to exam attempt restrictions
+  steps:
+    - intent: exam_attempts
+    - action: utter_exam_attempts
+
+- rule: Respond to application correction process
+  steps:
+    - intent: application_correction
+    - action: utter_application_correction
+
+- rule: Respond to application fees query
+  steps:
+    - intent: application_fees
+    - action: utter_application_fees
+
+- rule: Respond to mobile number requirement
+  steps:
+    - intent: mobile_number_requirement
+    - action: utter_mobile_number_requirement
+
+- rule: Respond to accepted identity documents
+  steps:
+    - intent: accepted_identity_documents
+    - action: utter_accepted_identity_documents
+
+- rule: Respond to payment issues
+  steps:
+    - intent: payment_issue
+    - action: utter_payment_issue
+
+- rule: Respond to exam centre selection
+  steps:
+    - intent: exam_centre_choice
+    - action: utter_exam_centre_choice
+
+- rule: Respond to multiple papers query
+  steps:
+    - intent: multiple_papers
+    - action: utter_multiple_papers
+
+- rule: Respond to required documents for application
+  steps:
+    - intent: required_documents
+    - action: utter_required_documents
+
+- rule: Respond to photo/signature upload issue
+  steps:
+    - intent: photo_signature_issue
+    - action: utter_photo_signature_issue
+
+- rule: Respond to disability assistance request
+  steps:
+    - intent: disability_assistance
+    - action: utter_disability_assistance
+
+- rule: Respond to application status check
+  steps:
+    - intent: application_status
+    - action: utter_application_status
+
+- rule: Respond to admit card download query
+  steps:
+    - intent: admit_card
+    - action: utter_admit_card
+
+- rule: Respond to exam entry requirements
+  steps:
+    - intent: exam_entry_requirements
+    - action: utter_exam_entry_requirements
+
+- rule: Respond to late entry policy query
+  steps:
+    - intent: late_entry_policy
+    - action: utter_late_entry_policy
+
+- rule: Respond to application withdrawal query
+  steps:
+    - intent: application_withdrawal
+    - action: utter_application_withdrawal
+
+- rule: Respond to library access queries
+  steps:
+  - intent: ask_library_access
+  - action: utter_ask_library_access
+
+- rule: Respond to library behavior queries
+  steps:
+  - intent: ask_library_behavior
+  - action: utter_ask_library_behavior
+
+- rule: Respond to book marking and damage queries
+  steps:
+  - intent: ask_marking_books
+  - action: utter_ask_marking_books
+
+- rule: Respond to eating and smoking restrictions
+  steps:
+  - intent: ask_eating_smoking
+  - action: utter_ask_eating_smoking
+
+- rule: Respond to personal belongings queries
+  steps:
+  - intent: ask_personal_belongings
+  - action: utter_ask_personal_belongings
+
+- rule: Respond to borrowing limits queries
+  steps:
+  - intent: ask_borrowing_limits
+  - action: utter_ask_borrowing_limits
+
+- rule: Respond to late return queries
+  steps:
+  - intent: ask_late_return
+  - action: utter_ask_late_return
+
+- rule: Respond to online book renewal queries
+  steps:
+  - intent: ask_online_renewal
+  - action: utter_ask_online_renewal
+
+- rule: Respond to second book renewal queries
+  steps:
+  - intent: ask_second_renewal
+  - action: utter_ask_second_renewal
+
+- rule: Respond to late fee queries
+  steps:
+  - intent: ask_late_fee
+  - action: utter_ask_late_fee
+
+- rule: Respond to lost or damaged book queries
+  steps:
+  - intent: ask_lost_book
+  - action: utter_ask_lost_book
+
+- rule: Respond to photocopy replacement queries
+  steps:
+  - intent: ask_photocopy_replacement
+  - action: utter_ask_photocopy_replacement
+
+- rule: Respond to multi-volume book loss queries
+  steps:
+  - intent: ask_multi_volume_loss
+  - action: utter_ask_multi_volume_loss
+
+- rule: Respond to out-of-print lost book queries
+  steps:
+  - intent: ask_out_of_print_book
+  - action: utter_ask_out_of_print_book
+
+- rule: Respond to dining mandatory question
+  steps:
+  - intent: ask_dining_mandatory
+  - action: utter_ask_dining_mandatory
+
+- rule: Respond to cooking allowed question
+  steps:
+  - intent: ask_cooking_allowed
+  - action: utter_ask_cooking_allowed
+
+- rule: Respond to meal timings question
+  steps:
+  - intent: ask_meal_timings
+  - action: utter_ask_meal_timings
+
+- rule: Respond to sick meal question
+  steps:
+  - intent: ask_sick_meal
+  - action: utter_ask_sick_meal
+
+- rule: Respond to food outside question
+  steps:
+  - intent: ask_food_outside
+  - action: utter_ask_food_outside
+
+- rule: Respond to kitchen entry question
+  steps:
+  - intent: ask_kitchen_entry
+  - action: utter_ask_kitchen_entry
+
+- rule: Respond to meal sharing question
+  steps:
+  - intent: ask_meal_sharing
+  - action: utter_ask_meal_sharing
+
+- rule: Respond to complaint process question
+  steps:
+  - intent: ask_complaint_process
+  - action: utter_ask_complaint_process
+
+- rule: Respond to complaint on social media question
+  steps:
+  - intent: ask_complaint_social_media
+  - action: utter_ask_complaint_social_media
+
+- rule: Respond to prohibited items in dining area
+  steps:
+  - intent: ask_prohibited_items
+  - action: utter_ask_prohibited_items
+
+- rule: Respond to mess mandatory question
+  steps:
+  - intent: ask_mandatory_mess
+  - action: utter_ask_mandatory_mess
+
+- rule: Respond to mess rebate application question
+  steps:
+  - intent: ask_mess_rebate_apply
+  - action: utter_ask_mess_rebate_apply
+
+- rule: Respond to short-term rebate question
+  steps:
+  - intent: ask_short_term_rebate
+  - action: utter_ask_short_term_rebate
+
+- rule: Respond to long-term rebate question
+  steps:
+  - intent: ask_long_term_rebate
+  - action: utter_ask_long_term_rebate
+
+- rule: Respond to rebate submission deadline question
+  steps:
+  - intent: ask_rebate_submission
+  - action: utter_ask_rebate_submission
+
+- rule: Respond to guest meal on rebate question
+  steps:
+  - intent: ask_guest_meal_rebate
+  - action: utter_ask_guest_meal_rebate
+
+- rule: Respond to full rebate reasons question
+  steps:
+  - intent: ask_full_rebate
+  - action: utter_ask_full_rebate
+
+- rule: Respond to rebate violation question
+  steps:
+  - intent: ask_violation_rebate
+  - action: utter_ask_violation_rebate
+
+- rule: Respond to rebate policy change question
+  steps:
+  - intent: ask_rebate_policy_change
+  - action: utter_ask_rebate_policy_change
+
+- rule: Provide WiFi connection help
+  steps:
+  - intent: wifi_connection_help
+  - action: utter_wifi_connection_help
+
+- rule: Handle network problem
+  steps:
+  - intent: network_problem
+  - action: utter_network_problem
+
+- rule: Report IT issue
+  steps:
+  - intent: report_it_issue
+  - action: utter_report_it_issue
+
+- rule: Change password
+  steps:
+  - intent: change_password
+  - action: utter_change_password
+
+- rule: Get internet account
+  steps:
+  - intent: get_internet_account
+  - action: utter_get_internet_account
+
+- rule: Connect to network
+  steps:
+  - intent: connect_to_network
+  - action: utter_connect_to_network
+
+- rule: Install Office 365
+  steps:
+  - intent: install_office_365
+  - action: utter_install_office_365
+
+- rule: Install MATLAB
+  steps:
+  - intent: install_matlab
+  - action: utter_install_matlab
+
+- rule: Generate SSH key
+  steps:
+  - intent: generate_ssh_key
+  - action: utter_generate_ssh_key
+
+- rule: VPN configuration
+  steps:
+  - intent: vpn_configuration
+  - action: utter_vpn_configuration
+
+- rule: Provide cyber security tips
+  steps:
+  - intent: cyber_security_tips
+  - action: utter_cyber_security_tips
+
+- rule: Contact CITC
+  steps:
+  - intent: contact_citc
+  - action: utter_contact_citc
+
+- rule: Check physical connectivity
+  steps:
+  - intent: check_physical_connectivity
+  - action: utter_check_physical_connectivity
+
+- rule: Check IP configuration
+  steps:
+  - intent: check_ip_configuration
+  - action: utter_check_ip_configuration
+
+- rule: Ping neighbor
+  steps:
+  - intent: ping_neighbor
+  - action: utter_ping_neighbor
+
+- rule: Telnet gateway
+  steps:
+  - intent: telnet_gateway
+  - action: utter_telnet_gateway
+
+- rule: Update system
+  steps:
+  - intent: update_system
+  - action: utter_update_system
+
+- rule: General inquiry
+  steps:
+  - intent: general_inquiry
+  - action: utter_general_inquiry
+
+- rule: Handle fallback
+  steps:
+  - intent: out_of_scope
+  - action: action_default_fallback
+
+- rule: Provide academic calendar details
+  steps:
+    - intent: ask_academic_calendar
+    - action: utter_ask_academic_calendar
+
+- rule: Provide class schedule
+  steps:
+    - intent: ask_class_schedule
+    - action: utter_ask_class_schedule
+
+- rule: Provide examination schedule
+  steps:
+    - intent: ask_examinations
+    - action: utter_ask_examinations
+
+- rule: Provide practical exam schedule
+  steps:
+    - intent: ask_practical_exams
+    - action: utter_ask_practical_exams
+
+- rule: Provide holiday details
+  steps:
+    - intent: ask_holidays
+    - action: utter_ask_holidays
+
+- rule: Provide fee-related information
+  steps:
+    - intent: ask_fee_related
+    - action: utter_ask_fee_related
+
+- rule: Provide registration details
+  steps:
+    - intent: ask_registration
+    - action: utter_ask_registration
+
+- rule: Provide event details
+  steps:
+    - intent: ask_events
+    - action: utter_ask_events
+
+- rule: Provide supervisor selection details
+  steps:
+    - intent: ask_supervisor_selection
+    - action: utter_ask_supervisor_selection
+
+- rule: Provide mid-semester break details
+  steps:
+    - intent: ask_mid_sem_break
+    - action: utter_ask_mid_sem_break
+
+- rule: Provide grade release information
+  steps:
+    - intent: ask_grade_release
+    - action: utter_ask_grade_release
+
+- rule: Provide re-exam request information
+  steps:
+    - intent: ask_re_exam
+    - action: utter_ask_re_exam
+
+- rule: Provide no-dues submission details
+  steps:
+    - intent: ask_no_dues
+    - action: utter_ask_no_dues
+
+- rule: Provide dual degree conversion details
+  steps:
+    - intent: ask_dual_degree
+    - action: utter_ask_dual_degree
+
+- rule: Respond to faculty inquiries
+  steps:
+    - intent: inquire_department_faculty
+    - action: utter_inquire_department_faculty
+
+- rule: Fallback to Groq API
+  steps:
+    - intent: nlu_fallback
+    - action: action_fallback_to_groq
+
+
+
