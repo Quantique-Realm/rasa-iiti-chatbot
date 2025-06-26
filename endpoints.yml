@@ -9,23 +9,33 @@
 
 # Server which runs your custom actions.
 # https://rasa.com/docs/rasa/custom-actions
+# Comment out for Render deployment (no action server yet)
+#action_endpoint:
+#  url: "http://localhost:5055/webhook"
 
-action_endpoint:
-  url: "http://localhost:5055/webhook"
-
+# Tracker store - Use in-memory for Render deployment
 tracker_store:
-  type: SQL
-  dialect: "postgresql"
-  url: "localhost"          # or 127.0.0.1
-  port: 5432                # default port
-  username: "postgres"      # or whatever you set during install
-  password: "HBX814"        # your chosen password
-  db: "rasa"                # name of your Rasa DB
+  type: InMemoryTrackerStore
 
-# Tracker store which is used to store the conversations.
-# By default the conversations are stored in memory.
-# https://rasa.com/docs/rasa/tracker-stores
+# PRODUCTION PostgreSQL Configuration (if you add a database later)
+# Uncomment and configure when you add a PostgreSQL service in Render
+#tracker_store:
+#  type: SQL
+#  dialect: "postgresql"
+#  url: "${DATABASE_URL}"  # Render provides this automatically
+#  # No need to specify individual connection details when using DATABASE_URL
 
+# LOCAL DEVELOPMENT Configuration (commented out for deployment)
+#tracker_store:
+#  type: SQL
+#  dialect: "postgresql"
+#  url: "localhost"
+#  port: 5432
+#  username: "postgres"
+#  password: "HBX814"
+#  db: "rasa"
+
+# Other tracker store options for reference
 #tracker_store:
 #    type: redis
 #    url: <host of the redis instance, e.g. localhost>
