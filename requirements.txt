@@ -1,6 +1,6 @@
 rasa==3.6.21
 rasa-sdk==3.6.2
+sentence-transformers==2.2.2  # Use lighter version
 requests
 python-dotenv
 SQLAlchemy<2.0
-sentence-transformers>=2.2.0,<3.0.0

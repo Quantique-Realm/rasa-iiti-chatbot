@@ -27,13 +27,13 @@ tracker_store:
 
 # LOCAL DEVELOPMENT Configuration (commented out for deployment)
 #tracker_store:
-#  type: SQL
-#  dialect: "postgresql"
-#  url: "localhost"
-#  port: 5432
-#  username: "postgres"
-#  password: "HBX814"
-#  db: "rasa"
+  type: SQL
+  dialect: "postgresql"
+  url: "localhost"
+  port: 5432
+  username: "postgres"
+  password: "HBX814"
+  db: "rasa"
 
 # Other tracker store options for reference
 #tracker_store:
